@@ -1,0 +1,19 @@
+tx:
+  - initial:
+      - command_start: start
+  - start:
+      - callback_collectingUserInformation: gettingUserAge
+      - callback_repeat: questionN1
+  - gettingUserAge:
+      - text: gettingUserEmail
+  - gettingUserEmail:
+      - text: quastionN1
+  - questionN1:
+      - callback_answerN1: questionN2
+      - callback_answerN2: questionN2
+      - callback_answerN3: questionN2
+  - questionN2:
+      - callback_answerN1: start
+      - callback_answerN2: start
+      - callback_answerN3: start
+      - callback_back: questionN1
